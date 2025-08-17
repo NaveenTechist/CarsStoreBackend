@@ -1,0 +1,26 @@
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+  "name": "Bobby",
+  "age": 20,
+  "email": "bobby.com",
+  "password": "bobby123"
+}
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "nav@test.com",
+  "password": "123456"
+}
+
+### Public Data
+GET http://localhost:3000/cars-data
+Content-Type: application/json
+
+### Private Data (replace <TOKEN>)
+GET http://localhost:3000/api/data/private
+Authorization: Bearer <TOKEN>
