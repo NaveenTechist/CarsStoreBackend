@@ -8,6 +8,11 @@ const jwt = require('jsonwebtoken');
 dotenv.config();
 
 const app = express();
+app.use(cors({
+  origin: 'http://localhost:3000',  // frontend URL
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true,                // if you need cookies/auth
+}));
 app.use(express.json());
 
 // -----------------------------
