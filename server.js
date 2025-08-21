@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGO_URI)
 // -----------------------------
 // User Schema
 // -----------------------------
-const carSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   imgUrl: String,
   rating: Number,
