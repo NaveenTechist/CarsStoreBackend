@@ -42,7 +42,7 @@ const carSchema = new mongoose.Schema({
   model: String,
   price: Number
 });
-const Car = mongoose.model('carsdata', carSchema, 'carsData'); // connect to carsData collection
+const Car = mongoose.model('carsData', carSchema, 'carsData'); // connect to carsData collection
 
 // -----------------------------
 // JWT Auth Middleware
