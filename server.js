@@ -26,12 +26,14 @@ mongoose.connect(process.env.MONGO_URI)
 // -----------------------------
 // User Schema
 // -----------------------------
-const userSchema = new mongoose.Schema({
+const carSchema = new mongoose.Schema({
   name: String,
-  age: Number,
-  email: { type: String, unique: true },
-  password: String
+  imgUrl: String,
+  rating: Number,
+  review: Number,
+  price: Number   
 });
+
 const User = mongoose.model('User', userSchema);
 
 // -----------------------------
