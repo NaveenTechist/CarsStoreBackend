@@ -42,8 +42,9 @@ const User = mongoose.model('User', userSchema);
 const carSchema = new mongoose.Schema({
   brand: String,
   model: String,
-  price: Number
-});
+  price: Number,
+}, { strict: false });  // 👈 allow existing hidden fields
+
 const Car = mongoose.model('carsData', carSchema, 'carsData'); // connect to carsData collection
 
 // -----------------------------
