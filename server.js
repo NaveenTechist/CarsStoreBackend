@@ -31,7 +31,10 @@ const userSchema = new mongoose.Schema({
   imgUrl: String,
   rating: Number,
   review: Number,
-  price: Number   
+  price: Number,
+  age: Number,
+  email: String,
+  password: Number
 });
 
 const User = mongoose.model('User', userSchema);
