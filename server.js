@@ -45,7 +45,7 @@ const carSchema = new mongoose.Schema({
   price: Number,
 }, { strict: false });  // 👈 allow existing hidden fields
 
-const Car = mongoose.model('carsData', carSchema); // connect to carsData collection
+const Car = mongoose.model('carsData', carSchema,'carsData'); // connect to carsData collection
 
 // -----------------------------
 // JWT Auth Middleware
