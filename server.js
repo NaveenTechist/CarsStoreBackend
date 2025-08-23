@@ -34,7 +34,8 @@ const userSchema = new mongoose.Schema({
   price: Number,
   age: Number,
   email: String,
-  password: String
+  password: String,
+  id: Number
 });
 
 const User = mongoose.model('User', userSchema);
