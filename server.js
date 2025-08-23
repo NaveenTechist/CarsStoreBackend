@@ -124,13 +124,14 @@ app.get('/cars-data', async (req, res) => {
 
 
 // -----------------------------
-// Get Car by ID
+// Get Car by numeric ID (DB has only 'id')
 // -----------------------------
 app.get('/cars-data/:id', async (req, res) => {
   try {
-    const { id } = req.params;
-    const car = await Car.findById(id);
+    const id = Number(req.params.id);            // convert string to number
+    if (isNaN(id)) return res.status(400).json({ message: 'Invalid car ID' });
 
+    const car = await Car.findOne({ id });      // search by numeric 'id' field
     if (!car) return res.status(404).json({ message: 'Car not found' });
 
     res.json(car);
@@ -138,6 +139,7 @@ app.get('/cars-data/:id', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
 
 
 // -----------------------------
