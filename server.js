@@ -121,6 +121,24 @@ app.get('/cars-data', async (req, res) => {
   }
 });
 
+
+// -----------------------------
+// Get Car by ID
+// -----------------------------
+app.get('/cars-data/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const car = await Car.findById(id);
+
+    if (!car) return res.status(404).json({ message: 'Car not found' });
+
+    res.json(car);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+
 // -----------------------------
 // Private Data API
 // -----------------------------
